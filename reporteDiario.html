@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Reportes Diarios de los Sensores">
+        <meta name="author" content="Ivan Yuquilima">
+        <title>Reportes: Diarios</title>
+        <link rel="icon" href="imagenes/ico.png">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/alertify.bootstrap.css" rel="stylesheet">
+        <link href="css/alertify.core.css" rel="stylesheet">
+        <link href="css/alertify.default.css" rel="stylesheet">
+        <link href="css/dashboard.css" rel="stylesheet">
+        <link href="css/simple-sidebar.css" rel="stylesheet">
+        <link href="css/animacionchart.css" rel="stylesheet">
+        <link href="css/bootstrap-datepicker3.css" rel="stylesheet"/>
+        <link href="amcharts/plugins/export/export.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <!-- MENU SUPERIOR-->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"/>
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">WSN CLOUD STORAGE</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a  href="#" class="dropdown-toggle"  data-toggle="dropdown"  
+                                aria-haspopup="true" aria-expanded="false">Dashboard
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">Reportes</li>
+                                <li><a href="reporteHoras.html">Hora</a></li>
+                                <li><a href="reporteDiario.html">Diarios</a></li>
+                                <li><a href="reporteMensual.html">Mensuales</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Comparativas</li>
+                                <li><a href="comparativaDiario.html">Diarios</a></li>
+                                <li><a href="comparativaMensual.html">Mensuales</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">Acerca de</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Menu lateral -->
+
+                <div id="wrapper">
+
+                    <!-- Sidebar -->
+                    <div id="sidebar-wrapper">
+                        <ul class="sidebar-nav">
+                            <li class="sidebar-brand">
+                                <a id="alert" href="#">Dashboard<span class="sr-only">(current)</span></a>
+                            </li>
+
+                            <li class="titulo">Reportes</li>
+                            <li><a href="reporteHoras.html"> &nbsp; &nbsp; &nbsp;Hora entre fechas</a></li>
+                            <li class="active"><a class="active" href="#"> &nbsp; &nbsp; &nbsp;Diarios</a></li>
+                            <li><a href="reporteMensual.html"> &nbsp; &nbsp; &nbsp;Mensuales</a></li>
+                            <li class="titulo">Comparativas</li>
+                            <li><a href="comparativaDiario.html"> &nbsp; &nbsp; &nbsp;Diarios</a></li>
+                            <li><a href="comparativaMensual.html"> &nbsp; &nbsp; &nbsp;Mensuales</a></li>
+                            <li class="titulo">Fog</li>
+                            <li><a href="http://192.168.10.64/index.html"> &nbsp; &nbsp; &nbsp;Minutos</a></li>
+                        </ul>
+                    </div>
+                    
+
+                    <!-- Contenido de la pagina HTML -->
+                    <div class="col-sm-12 col-md-12  main">
+                        <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">Ocultar Menu</a>
+                        <h1 class="page-header">Reportes: Diarios</h1>
+
+                        <div class="row placeholders">
+                            <!-- Formulario de entrada y seleccion de datos de entrada para el grafico -->
+                            <div id="Valores" class="row">   
+                                <form class="form-group">
+                                    <div class="col-lg-2">
+                                        <label for="selectDispositivo">Dispositivo:</label>
+                                        <select id="selectDispositivo" class="form-control" onchange="cargarSensor()">
+                                             <option value="E1">E1</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label for="selectSensor">Sensor:</label>
+                                        <select id="selectSensor" class="form-control" onchange="cargarValor()">
+                                            <option value="Calidad del aire">Calidad del aire</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label for="selectValor">Valor:</label>
+                                        <select id="selectValor" class="form-control" onchange="obtenerDatos()">
+                                         <option value="Voltage Medido">Voltage Medido</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 date">
+                                        <label for="fechaInicio">Fecha:</label>
+                                        <input class="form-control" id="fechaInicio" placeholder="año-mes-dia" type="text" />
+                                    </div>
+
+                                    <div class="col-lg-1">
+                                        <br/>
+                                        <input type="button"
+                                               onclick="obtenerDatos()"
+                                               value="Actualizar" class="btn btn-primary"/>  
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Div en donde se renderiza el grafico -->
+                        <div class="row placeholders">
+                            <div class="panel panel-primary" >
+                                <div class="panel-body"  style="background: #3f3f4f;color:#ffffff;">
+                                    <div id="contenedorGrafico">
+                                        <div id="contenedorAmchart">
+                                            <div id="chartdiv" style="width: 100%; height: 500px;"></div>
+                                        </div>
+                                        <div id="mensajesGrafico">
+                                            <div id="loadingdiv"><span><img src="imagenes/load1.gif" width="50px" height="50px"/> Cargando Grafico</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div> 
+
+        <!-- Se importan los elementos necesarios para amcharts
+        liberia con la cual se renderizan los graficos -->
+        <script src="amcharts/amcharts.js"></script>
+        <script src="amcharts/serial.js"></script>
+        <script src="amcharts/themes/dark.js"></script>
+        <script src="amcharts/amstock.js"></script>
+        <script src="amcharts/plugins/export/export.js"  async></script>
+        <script src="amcharts/plugins/responsive/responsive.min.js"></script>
+        <script src="js/mutationObserver.js"></script>
+        <!-- La libreria Monete JS es utilizada por bootstrap-datepicker.js para validar las fechas-->
+        <script src="js/moment.js"></script>
+     
+        <script src="js/jquery.js"></script>
+        <!-- Importaciones de Boostrap JS, Datepicker -->
+        <script src="js/bootstrap.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/bootstrap-datepicker.es.min.js"></script>
+        <!-- Script utilizado para cargar los datepickers en los inputbox respectivos-->
+        <script type="text/javascript">
+                                                   $(function () {
+                                                       $("#fechaInicio").datepicker({
+                                                           format: "yyyy-mm-dd",
+                                                           language: 'es'
+                                                       });
+                                                   });
+        </script>
+        <!-- Menu Toggle Script -->
+        <script type="text/javascript">
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+                var menuclass = $("#wrapper").attr('class');
+                if (menuclass === "toggled") {
+                    $("#menu-toggle").text("Mostrar Menu");
+                } else {
+                    $("#menu-toggle").text("Ocultar Menu");
+                }
+
+            });
+        </script>
+        <script src="js/reporteDiario.js"></script>
+        <script src="js/alertify.min.js"></script>
+        <script src="js/mensaje.js"></script>
+
+    </body>
+</html>
