@@ -20,11 +20,17 @@
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
-<a href="#" id="login1" class="btn btn-primary">Iniciar sesión</a>
+<a href="#" id="login" class="btn btn-primary">Iniciar sesión</a>
 <br><br>
-<fb:login-button id="login" scope="public_profile,email" onlogin="checkLoginState();">iniciarS</fb:login-button>
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">iniciarS</fb:login-button>
 <div id="status">
 </div>
+
+<ul id="typo">
+<li id="Trss"><a href="javascript:void(0);" title="Suscribirse via RSS ">RSS</a></li>
+<li id="Ttwitter"><a href="javascript:void(0);" title="Compartir en Twitter">Twitter</a></li>
+<li id="Tfacebook"><a href="javascript:void(0);" title="Compartir en Facebook">Facebook</a></li>
+</ul>
 	
 	<script>
 	// Load the SDK asynchronously
