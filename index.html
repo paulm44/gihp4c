@@ -31,9 +31,9 @@ crossorigin="anonymous">
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
 
-
+<a href="#" id="login" class="btn btn-primary">Iniciar sesión</a>
 <br><br>
-<fb:login-button href="#" id="login" class="btn btn-primary">Iniciar sesión</fb:login-button>
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">Iniciar sesión</fb:login-button>
 
 	
 	<script>
