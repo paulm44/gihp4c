@@ -1,26 +1,34 @@
 <html lang="en">
-  <head>
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="831510361387-lkko2b6td272guqrup0ph3d9nejojlps.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-  </head>
-  <body>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      };
-    </script>
+<html>
+<head>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
+<body>
+    
+    <script type="text/javascript">  
+      //initialize settings  
+      window.fbAsyncInit = function() {  
+          FB.init({  
+              appId: 507970359393580, //appId of your Facebook app  
+              status: true,   
+              cookie: true,  
+              xfbml: true,  
+              oauth: true  
+          });  
+      };  
+      (function(){var e=document.createElement('script');e.async=true;e.src=document.location.protocol+'//connect.facebook.net/en_US/all.js';document.getElementById('fb-root').appendChild(e);}());  
+      function doFBLogin() {  
+          FB.login(function(response) {  
+              if (response.authResponse) {  
+                  var token = response.authResponse.accessToken;  
+                  //define the login function on your client through FB  
+              } else {  
+                  //processing an error  
+              }  
+          }, {scope:'email,status_update,publish_stream'});  
+      //scope – the set of fields we received from the server when login  
+      }  
+    </script> 
   </body>
 </html>
