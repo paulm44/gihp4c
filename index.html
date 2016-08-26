@@ -1,34 +1,37 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-<title>Facebook Login JavaScript Example</title>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<title>Facebook SDK para Javascript</title>
+
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="main.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="main.css">
 </head>
 <body>
-    
-    <script type="text/javascript">  
-      //initialize settings  
-      window.fbAsyncInit = function() {  
-          FB.init({  
-              appId: 507970359393580, //appId of your Facebook app  
-              status: true,   
-              cookie: true,  
-              xfbml: true,  
-              oauth: true  
-          });  
-      };  
-      (function(){var e=document.createElement('script');e.async=true;e.src=document.location.protocol+'//connect.facebook.net/en_US/all.js';document.getElementById('fb-root').appendChild(e);}());  
-      function doFBLogin() {  
-          FB.login(function(response) {  
-              if (response.authResponse) {  
-                  var token = response.authResponse.accessToken;  
-                  //define the login function on your client through FB  
-              } else {  
-                  //processing an error  
-              }  
-          }, {scope:'email,status_update,publish_stream'});  
-      //scope – the set of fields we received from the server when login  
-      }  
-    </script> 
-  </body>
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
+<a href="#" id="login" class="btn btn-primary">Iniciar sesión</a>
+	
+	<script>
+	// Load the SDK asynchronously
+	  (function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+	    js = d.createElement(s); js.id = id;
+	    js.src = "//connect.facebook.net/en_US/sdk.js";
+	    fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));
+	 </script>
+
+
+</body>
 </html>
