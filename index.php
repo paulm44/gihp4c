@@ -25,7 +25,7 @@ require_once('twitteroauth/twitteroauth.php');
 // define the consumer key and secet and callback
 define('CONSUMER_KEY', 'ie8rTFolnhROyqW3KFBhFWv8H');
 define('CONSUMER_SECRET', 'NLi8dgAJUjijaX22HhVZvLD2cQgonQLhjsMVniQ42d1zKbnYtb');
-define('OAUTH_CALLBACK', 'https://paulm44.github.io/gihp4c/index.php');
+define('OAUTH_CALLBACK', 'https://paulm44.github.io/gihp4c/');
 // start the session
 session_start();
 
