@@ -44,13 +44,23 @@
 			</p>
 			
 			<p>
-			<label>boton2</label>
+			<label>boton3</label>
 			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 			</fb:login-button>
 			<div id="status">
 			</div></p>
 			
 			<a href="#" id="login" class="btn btn-primary">Iniciar sesión</a>
+			<script>
+			// Load the SDK asynchronously
+			  (function(d, s, id) {
+			    var js, fjs = d.getElementsByTagName(s)[0];
+			    if (d.getElementById(id)) return;
+			    js = d.createElement(s); js.id = id;
+			    js.src = "//connect.facebook.net/en_US/sdk.js";
+			    fjs.parentNode.insertBefore(js, fjs);
+			  }(document, 'script', 'facebook-jssdk'));
+			 </script>
 			
 
 		</form>
