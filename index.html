@@ -3,13 +3,9 @@
 <head>
 	<meta charset="utf-8">   
 	<title>Login GIHP4C</title>
-	<link rel="stylesheet" href="estilo1.css">
+	<link rel="stylesheet" href="estilo.css">
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="main.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	
 
 </head>
@@ -30,7 +26,7 @@
 
 			<p>
 			<a class="facebook-before"><span class="fontawesome-facebook"></span></a>
-			<button class="facebook" id="login3">Iniciar sesion con Facebook</button>
+			<button class="facebook" id="login">Iniciar sesion con Facebook</button>
 			</p>
 
 			<p>
@@ -44,27 +40,26 @@
 			</p>
 			
 			<p>
-			<label>boton3</label>
+			<label>boton</label>
 			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 			</fb:login-button>
 			<div id="status">
 			</div></p>
-			
-			<a href="#" id="login" class="btn btn-primary">Iniciar sesión</a>
+			<label>boton</label>
+
 			<script>
-			// Load the SDK asynchronously
-			  (function(d, s, id) {
-			    var js, fjs = d.getElementsByTagName(s)[0];
-			    if (d.getElementById(id)) return;
-			    js = d.createElement(s); js.id = id;
-			    js.src = "//connect.facebook.net/en_US/sdk.js";
-			    fjs.parentNode.insertBefore(js, fjs);
-			  }(document, 'script', 'facebook-jssdk'));
-			 </script>
-			
+	// Load the SDK asynchronously
+	  (function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+	    js = d.createElement(s); js.id = id;
+	    js.src = "//connect.facebook.net/en_US/sdk.js";
+	    fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));
+	 </script>
 
 		</form>
 	</div>
-			
+
 </body>
 </html>
