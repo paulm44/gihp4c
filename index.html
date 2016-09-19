@@ -7,6 +7,11 @@
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="main.js"></script>
 	
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="831510361387-lkko2b6td272guqrup0ph3d9nejojlps.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="google.js"></script>
+	
 
 </head>
 <body>
@@ -48,7 +53,7 @@
 
 <p>
 <a class="facebook"><span class="fontawesome-facebook" ></span></a>
-	<button class="twitter"  onclick="checkLoginState();" id="login" >Iniciar sesion con videos1 </button>
+	<button class="twitter"  onclick="onSignIn;">Iniciar sesion con videos1 </button>
 </p>
 			
 			<p>
@@ -62,7 +67,7 @@
 			</fb:login-button>
 			<div id="status">
 			</div></p>
-			<label>boton1</label>
+			<label>boton71</label>
 
 			<script>
 			// Load the SDK asynchronously
