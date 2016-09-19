@@ -44,15 +44,15 @@ $(function() {
   	}
 
   	var getFacebookData =  function() {
-  		FB.api('/me', function(response) {
+  		FB.api('/me', { locale: 'en_US', fields: 'name, email' }, function(response) {
 	  		$('#login').after(div_session);
 	  		$('#login').remove();
 	  		$('#facebook-session strong').text("Bienvenido: "+response.name);
 	  		$('#facebook-session img').attr('src','http://graph.facebook.com/'+response.id+'/picture?type=large');
-	  	
-  			alert(JSON.stringify(response));
-  			
-  		});
+	  	console.log("tus datos"+ response.email);
+   console.log(JSON.stringify(response));
+
+      });
   	}
 
   	var facebookLogin = function() {
