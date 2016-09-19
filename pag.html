@@ -19,11 +19,12 @@
 
 
   function attachSignin(element) {
-     var profile = googleUser.getBasicProfile();
+     
+     console.log(element.id);
      auth2.attachClickHandler(element, {}, function(googleUser){
-      document.getElementById('name').innerText="Nombre: " + profile.getName();
-      document.getElementById('correo').innerText="Email: " + profile.getEmail();
-      document.getElementById('imagen').innerText="Imagen: " + profile.getImageUrl();
+      document.getElementById('name').innerText="Nombre: " + googleUser.getBasicProfile().getName();
+      document.getElementById('correo').innerText="Email: " + googleUser.getBasicProfile().getEmail();
+      document.getElementById('imagen').innerText="Imagen: " + googleUser.getBasicProfile().getImageUrl();
      },
      function(error) {
       alert(JSON.stringify(error, undefined, 2));
