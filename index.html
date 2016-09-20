@@ -42,7 +42,6 @@
 			<p>
 			<a class="google-before"><span class="fontawesome-google-plus"></span></a>
 			<button class="google" id="btngoogle">Iniciar sesion con Google+</button>
-			<script>startApp();</script>
 			</p>
 			
 			<!--
@@ -55,7 +54,7 @@
 <a class="facebook"><span class="fontawesome-facebook" ></span></a>
 	<button class="twitter"  onclick="onSignIn;">Iniciar sesion con videos1 </button>
 </p>
-		-->	
+			
 			<p>
 				<button class="zocial facebook">Button label here</button>
 				<a href="#" class="zocial twitter">Sign in with Twitter</a>
@@ -66,11 +65,12 @@
 			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 			</fb:login-button>
 			<div id="status">
-			</div></p>
-			<label>botonh</label>
-
+			</div></p>-->
+			<label>boton4</label>
+			
+			
 			<script>
-			// Load the SDK asynchronously
+			// Load the SDK asynchronously FACEBOOK
 			  (function(d, s, id) {
 			    var js, fjs = d.getElementsByTagName(s)[0];
 			    if (d.getElementById(id)) return;
@@ -78,6 +78,11 @@
 			    js.src = "//connect.facebook.net/en_US/sdk.js";
 			    fjs.parentNode.insertBefore(js, fjs);
 			  }(document, 'script', 'facebook-jssdk'));
+			 </script>
+			 
+			 <script>
+			 //GOOGLE+
+			 	startApp();
 			 </script>
 
 		</form>
