@@ -13,15 +13,17 @@ var googleUser = {};
     });
   };
 
-profile1 = googleUser.getBasicProfile();
-
   function attachSignin(element) {
      console.log(element.id);
-     
      auth2.attachClickHandler(element, {}, function(googleUser){
-      document.getElementById('name').innerText="Nombre: " + profile1.getName();
-      document.getElementById('correo').innerText="Email: " + profile1.getEmail();
+      document.getElementById('name').innerText="Nombre: " + googleUser.getBasicProfile().getName();
+      document.getElementById('correo').innerText="Email: " + googleUser.getBasicProfile().getEmail();
       document.getElementById('imagen').innerText="Imagen: " + googleUser.getBasicProfile().getImageUrl();
+      console.log('Full Name: ' + googleUser.getBasicProfile().getName());
+    console.log('Given Name: ' + googleUser.getBasicProfile().getGivenName());
+    console.log('Family Name: ' + googleUser.getBasicProfile().getFamilyName());
+      console.log("Image URL: " + googleUser.getBasicProfile().getImageUrl());
+      console.log("Email: " + googleUser.getBasicProfile().getEmail());
      },
      function(error) {
       alert(JSON.stringify(error, undefined, 2));
