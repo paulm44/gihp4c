@@ -8,7 +8,7 @@ var googleUser = {};
         // Request scopes in addition to 'profile' and 'email'
         //scope: 'additional_scope'
       });
-      attachSignin(document.getElementById('btngoogle'));
+      attachSignin(document.getElementById('customBtn'));
     });
   };
 
