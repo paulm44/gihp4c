@@ -68,7 +68,7 @@
 		margin-bottom: 20px;
 	}
 
-	#login{
+	#iniciarsesion{
 		background: #008dde;
 	}
 
@@ -79,7 +79,7 @@
 		text-decoration: none;
 	}
 
-	#login:hover{
+	#iniciarsesion:hover{
 		background: #008dd0;
 	}
 
