@@ -13,13 +13,14 @@ var googleUser = {};
     });
   };
 
+profile1 = googleUser.getBasicProfile();
 
   function attachSignin(element) {
      console.log(element.id);
-     var profile = googleUser.getBasicProfile();
+     
      auth2.attachClickHandler(element, {}, function(googleUser){
-      document.getElementById('name').innerText="Nombre: " + profile.getName();
-      document.getElementById('correo').innerText="Email: " + profile.getEmail();
+      document.getElementById('name').innerText="Nombre: " + profile1.getName();
+      document.getElementById('correo').innerText="Email: " + profile1.getEmail();
       document.getElementById('imagen').innerText="Imagen: " + googleUser.getBasicProfile().getImageUrl();
      },
      function(error) {
