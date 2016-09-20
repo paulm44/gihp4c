@@ -1,7 +1,8 @@
+/*
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 @import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/css-social-buttons/1.2.0/css/zocial.css)
-
+*/
 	[class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
@@ -133,7 +134,8 @@
 	}
 
 	.facebook {
-		background-color: #0079ce;
+		/*background-color: #0079ce;*/
+		background-color: #008dda;
 		border: none;
 		border-radius: 0px 3px 3px 0px;
 		-moz-border-radius: 0px 3px 3px 0px;
