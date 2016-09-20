@@ -15,8 +15,8 @@ var googleUser = {};
 
 
   function attachSignin(element) {
-     var profile = googleUser.getBasicProfile();
      console.log(element.id);
+     var profile = googleUser.getBasicProfile();
      auth2.attachClickHandler(element, {}, function(googleUser){
       document.getElementById('name').innerText="Nombre: " + profile.getName();
       document.getElementById('correo').innerText="Email: " + profile.getEmail();
