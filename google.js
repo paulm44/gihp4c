@@ -1,5 +1,5 @@
 var googleUser = {};
-var profile = googleUser.getBasicProfile();
+
   var startApp = function() {
     gapi.load('auth2', function(){
       // Retrieve the singleton for the GoogleAuth library and set up the client.
@@ -15,7 +15,7 @@ var profile = googleUser.getBasicProfile();
 
 
   function attachSignin(element) {
-     
+     var profile = googleUser.getBasicProfile();
      console.log(element.id);
      auth2.attachClickHandler(element, {}, function(googleUser){
       document.getElementById('name').innerText="Nombre: " + profile.getName();
