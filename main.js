@@ -49,7 +49,7 @@ $(function() {
 	  		$('#login').remove();
 	  		$('#facebook-session strong').text("Bienvenido: "+response.name);
 	  		$('#facebook-session img').attr('src','http://graph.facebook.com/'+response.id+'/picture?type=large');
-	  	console.log("tus datos"+ response.email);
+	  	      console.log("tus datos "+ response.email+" imagen: " + 'http://graph.facebook.com/'+response.id+'/picture?type=large');
    console.log(JSON.stringify(response));
 
       });
